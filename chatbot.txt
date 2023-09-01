@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Add some styling for the chat interface */
+      #chat-container {
+        width: 500px;
+        height: 400px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      #chat-header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      #chat-body {
+        height: 300px;
+        overflow-y: scroll;
+        padding: 10px;
+      }
+      #chat-form {
+        padding: 10px;
+        text-align: center;
+        border-top: 1px solid #ccc;
+      }
+      #chat-input {
+        width: 75%;
+        height: 30px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      #chat-submit {
+        width: 20%;
+        height: 35px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-container">
+      <div id="chat-header">
+        Chat Bot
+      </div>
+      <div id="chat-body">
+        <!-- Placeholder for chat messages -->
+      </div>
+      <div id="chat-form">
+        <input type="text" id="chat-input">
+        <button id="chat-submit">Send</button>
+      </div>
+    </div>
+    <script>
+      // Add some JavaScript to handle the chat interface
+      const input = document.querySelector('#chat-input');
+      const submit = document.querySelector('#chat-submit');
+      const body = document.querySelector('#chat-body');
+      
+      submit.addEventListener('click', () => {
+        // Get the user's input
+        const request = input.value;
+        
+        // Add the user's input to the chat body
+        body.innerHTML += '<p>You: ' + request + '</p>';
+        
+        // Generate a response from the chat bot
+        const response = 'Hello, how can I help you today?';
+        
+        // Add the chat bot's response to the chat body
+        body.innerHTML += '<p>Bot: ' + response + '</p>';
+        
+        // Clear the chat input
+        input.value = '';
+      });
+    </script>
+  </body>
+</html>

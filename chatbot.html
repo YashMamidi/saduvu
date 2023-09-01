@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #chat-container {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  border: 1px solid rgb(168, 0, 0);
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom right, #d3d3d3, #fff);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#chat-header {
+  background-color: rgb(0, 95, 162);
+  color: rgb(0, 166, 166);
+  padding: 10px;
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#chat-body {
+  height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+#chat-form {
+  padding: 10px;
+  text-align: center;
+  border-top: 5px solid rgb(0, 131, 163);
+}
+
+#chat-input {
+  width: 75%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+#chat-submit {
+  width: 20%;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 131, 163);
+  background-color: 1px antiquewhite;
+  color: rgba(0, 121, 161, 0.538);
+}
+
+#chat-options {
+  width: 75%;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 58, 128, 0.555);
+  margin-bottom: 10px;
+}
+</style>
+    
+    
+    
+  
+  </head>
+  <body>
+    <div id="chat-container">
+      <div id="chat-header">
+        Chat Bot
+      </div>
+      <div id="chat-body">
+        <!-- Placeholder for chat messages -->
+      </div>
+      <div id="chat-form">
+        <select id="chat-options">
+          <option value="">Select a question</option>
+          <option value="What are your hours of operation?">What are your hours of operation?</option>
+          <option value="What is your return policy?">What is your return policy?</option>
+          <option value="Where is your store located?">Where is your store located?</option>
+        </select>
+        <br>
+        <input type="text" id="chat-input">
+        <button id="chat-submit">Send</button>
+      </div>
+    </div>
+    <script>
+      // Add some JavaScript to handle the chat interface
+      const options = document.querySelector('#chat-options');
+      const input = document.querySelector('#chat-input');
+      const submit = document.querySelector('#chat-submit');
+      const body = document.querySelector('#chat-body');
+      
+      submit.addEventListener('click', () => {
+        // Get the user's input
+        let request = '';
+        if (options.value) {
+          request = options.value;
+        } else {
+          request = input.value;
+        }
+
+        // Add the user's input as a new message
+        const message = document.createElement('div');
+        message.innerHTML = 'User: ' + request;
+        body.appendChild(message);
+
+        // Get the response from the chat bot
+        let response = '';
+        switch (request.toLowerCase()) {
+          case 'what are your hours of operation?':
+            response = 'We are open 24/7.';
+            break;
+          case 'what is your return policy?':
+            response = 'We offer a 30-day return policy.';
+            break;
+          case 'where is your store located?':
+            response = 'Our store is located at 123 Main St.';
+            break;
+          default:
+            response = 'I\'m sorry, I don\'t understand your request.';
+            break;
+        }
+
+        // Add the chat bot's response as a new message
+        const reply = document.createElement('div');
+        reply.innerHTML = 'Chat Bot: ' + response;
+        body.appendChild(reply);
+
+        // Clear the input field
+        input.value = '';
+        options.value = '';
+
+        // Scroll to the bottom of the chat body
+        body.scrollTop = body.scrollHeight;
+      });
+    </script>
+  </body>
+</html>

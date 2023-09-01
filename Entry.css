@@ -1,0 +1,295 @@
+body{
+  overflow-x: hidden !important;
+  font-family: MerriWeather;
+}
+.formobile{
+  display: none !important;
+}
+
+.Heading{
+    padding-left: 5%;
+    padding-top : 3%;
+    font-size: 8vw;
+    color: green;
+}
+
+
+.Sub{
+    width: 100%;
+    padding-left: 75%;
+    padding-top: 5%;
+    font-size: 1.65vw;
+}
+.Heading2{
+    /* padding-left: 35%; */
+    padding-top : 10%; 
+    font-size: 8vw;
+    color: green;
+}
+.Sub2{
+    width: 100%;
+
+    padding-left: 5%;
+    padding-top: 5%;
+    font-size: 1.5vw;
+}
+
+
+.Button{
+    padding:10px;
+    background-color: green;
+    text-decoration: none;
+    width: fit-content;
+    border-radius: 2px;
+    margin-top: 15px;
+    /* margin: 10px; */
+}
+
+.Button a{
+  color: white;
+}
+
+.Button:hover{
+  background-color: black !important;
+  
+}
+
+.upquote{
+  font-size: 2vw;
+  color: green;
+  padding:5%;
+  padding-bottom: 0;
+  animation : changeHeading 6s infinite linear;
+  padding-top: 5%;
+  text-align: center;
+}
+
+.ExpandQuote{
+  margin:0;
+  padding: 5%;
+  padding-top: 1%;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation : changeHeading 6s infinite linear;
+  font-family:'Times New Roman', Times, serif;
+
+}
+
+#spans{
+  margin: 0;
+  padding : 0;
+  font-size: 5vw;
+  text-transform: uppercase;
+
+}
+
+#spans span{
+  display: inline-flex;
+  animation : changeHeading 6s infinite linear;
+  color:green;
+
+}
+
+#spans span:nth-child(even){
+  overflow: hidden;
+  transition: ease-in-out 0.5s;
+  color : green;
+  animation : changeHeading 6s infinite linear;
+  /* border-bottom: 8px solid #a1ff34; */
+  letter-spacing: -1em;
+}
+
+#spans:hover span:nth-child(even){
+  letter-spacing: 0;
+  transition-delay: 0s;
+}
+
+#spans:hover span:nth-child(2){
+  transition-delay: 0.3;
+}
+#spans:hover span:nth-child(4){
+  transition-delay: 0.5s;
+}
+#spans:hover span:nth-child(6){
+  transition-delay: 0.8s;
+}
+#spans:hover span:nth-child(8){
+  transition-delay: 1s;
+}
+
+
+/* ScrollScript */
+.scrollFade {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .scrollFade--hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .scrollFade--visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .scrollFade--animate {
+    transition: opacity 1s ease-in-out;
+  }
+
+.candleseffect{
+    size: 100px;
+}
+
+
+
+
+/* ScrambleWords */
+
+.main-content {
+  /* text-align: center; */
+  text-transform: uppercase;
+  /* scroll-snap-type: y mandatory; */
+  /* position: relative; */
+  
+  
+}
+
+.hover,
+.word,
+h1 {
+  cursor: pointer;
+}
+
+h1 {
+  position: relative;
+  color: green;
+  animation : changeHeading 6s infinite linear;
+  font-family:'Times New Roman', Times, serif;
+  
+}
+
+.concept {
+  position: relative;
+  padding: 5%;
+  padding-top: 20%;
+  border:0px;
+  margin:0px;
+  width: 335px;
+  /* height: 1vh; */
+  overflow: hidden;
+  /* scroll-snap-align: center; */
+}
+.concept:before {
+  /* content: ""; */
+  /* position: absolute; */
+  /* width: 10%; */
+  /* height: 10%; */
+  /* top: 0; */
+  /* left: 0; */
+
+  /* opacity: 0; */
+
+}
+
+
+
+
+.concept-five {
+  
+  /* display: flex; */
+  /* align-items: center; */
+}
+.concept-five .word {
+  /* margin: auto; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  
+}
+.concept-five .word:hover .char:nth-child(even) {
+  top: 20px;
+}
+.concept-five .word:hover .char:nth-child(odd) {
+  top: -20px;
+}
+.concept-five .char {
+  
+  position: relative;
+  /* display: inline-block; */
+  top: 0;
+  transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+.manollu{
+  padding:5%;
+  padding-bottom: 2%;
+  animation: changeHeading 6s infinite linear;
+  
+}
+
+.card{
+  border-radius: 10px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  margin-top : 2%;
+  margin-left:0;
+  transition : 0.5s;
+}
+
+.card:hover{
+  margin-top: 0;
+  margin-bottom: 2%;
+}
+
+
+@media all and (max-width : 620px){
+  .Heading{
+    padding-top: 5%;
+    font-size: 10vw;
+    padding-left: 2%;
+  }
+  .Sub{
+    font-size: 3vw !important;
+  }
+  .Heading2{
+    font-size: 10vw !important;
+    padding-left: 5%;
+  }
+  .Sub2{
+    font-size: 3vw !important;
+    padding-left: 2% !important;
+  }
+
+  .word{
+    padding-left: 20.5vw !important;
+    font-size: 6.5vw !important;
+  }
+  .Button{
+    margin: 0 !important;
+    margin-top: 5vw !important;
+  }
+  
+  .formobile{
+    display: block !important;
+  }
+  .forpc{
+    display: none !important;
+  }
+  #spans{
+    font-size: 5vw !important;
+  }
+  #ask{
+    font-size: 4vw !important;
+  }
+  .game--title{
+    font-size: 8vw !important;
+  }
+  .game--status{
+    font-size: 9vw !important;
+  }
+  .game--restart{
+    font-size: 4vw !important;
+    height: 17vw !important;
+    width: 20vw;
+  }
+}
